@@ -3,6 +3,7 @@ package com.nopcommerce.user;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -25,13 +26,54 @@ public class User_01_Register_Login {
 	}
 	
 	@Test
-	public void Tc_01_Register_Empty_Data() {
+	public void TC_01_Register_Empty_Data() {
 		driver.findElement(By.cssSelector("a.ico-register")).click();
-		
 		driver.findElement(By.cssSelector("button#register-button")).click();
 		
-		Assert.assertEquals(driver.findElement(By.cssSelector("span#Firstname-error")), "First name is required.");
+		sleepInSecond(3);
+		Assert.assertEquals(driver.findElement(By.xpath("//span[@id='FirstName-error']")).getText(), "First name is required.");
+		Assert.assertEquals(driver.findElement(By.id("LastName-error")).getText(), "Last name is required.");
+		Assert.assertEquals(driver.findElement(By.id("Email-error")).getText(), "Email is required.");
+		Assert.assertEquals(driver.findElement(By.id("Password-error")).getText(), "Password is required.");
+		Assert.assertEquals(driver.findElement(By.id("ConfirmPassword-error")).getText(), "Password is required.");
 	}
+	
+	@Test
+	public void TC_02_Invalid_Email() {
+		driver.findElement(By.cssSelector("a.ico-register")).click();
+		
+		driver.findElement(By.id("FirstName")).sendKeys("Nguyen");
+		driver.findElement(By.id("LastName")).sendKeys("Lan");
+		driver.findElement(By.id("Email")).sendKeys("Nguyen5454$465%^&");
+		driver.findElement(By.id("Password")).sendKeys("123456");
+		driver.findElement(By.id("ConfirmPassword")).sendKeys("123456");
+		
+		driver.findElement(By.cssSelector("button#register-button")).click();
+		sleepInSecond(3);
+		Assert.assertEquals(driver.findElement(By.id("Email-error")).getText(), "Wrong email");
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	public void sleepInSecond(long time) {
+		try {
+			Thread.sleep(time*1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public int fakeIntNumber() {
+		Random rand = new Random();
+		return rand.nextInt(9999);
+		}
+	
 
 	@AfterClass
 	public void afterClass() {
