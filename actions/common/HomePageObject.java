@@ -19,4 +19,17 @@ public class HomePageObject extends BasePage{
 		
 	}
 
+	public void clickToLoginLink() {
+		waitForElementClickable(driver, HomePageUI.LOGIN_LINK);
+		clickElement(driver, HomePageUI.LOGIN_LINK);
+		
+	}
+
+	public boolean isMyAccountLinkIsDisplayed() {
+		if(isElementDisplayed(driver, "//a[@class='ico-account']")) {
+			return true;
+		}
+		return false;
+	}
+
 }

@@ -3,6 +3,7 @@ package com.nopcommerce.user;
 import org.testng.annotations.Test;
 
 import common.HomePageObject;
+import common.LoginPageObject;
 import common.RegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
@@ -15,7 +16,15 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
+@Test
 public class Level_2_Apply_BasePage_2{
+	private WebDriver driver;
+	private String email, password, invalidEmail, notExistedEmail;
+	private String project_path = System.getProperty("user.dir");
+	HomePageObject homePage;
+	RegisterPageObject registerPage;
+	Level_2_Login level_2;
+	LoginPageObject loginPage;
 	
 	@BeforeClass
 	public void beforeClass() {
@@ -23,132 +32,107 @@ public class Level_2_Apply_BasePage_2{
 		driver = new FirefoxDriver();
 		
 		homePage = new HomePageObject(driver);
+		loginPage = new LoginPageObject(driver);
 		registerPage = new RegisterPageObject(driver);
-		firstName = "Nguyen";
-		lastName = "Lan";
+		level_2 = new Level_2_Login();
+		
 		password = "123456";
-		emailAddress = emailAddress();	
+		email = emailLogin();
+		invalidEmail = "abcgmail.com";
+		notExistedEmail = "ff"+emailLogin();
 		
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get("https://demo.nopcommerce.com/");
-
+ 
 	}
  
-	@Test
-	public void Register_01_Register_Empty_Data() {
-		System.out.println("Home Page - Step 01: Click to Register link");
-		homePage.clickToRegisterLink();
+	public void Login_01_Empty_Data() {
+		System.out.println("Home Page - Step 01: Click link Login");
+		homePage.clickToLoginLink();
 		
-		System.out.println("Register page - Step 02: Click to Register button");
-		registerPage.clickToRegisterButton();
+		System.out.println("Login Page - Step 02: Click button Login");
+		loginPage.clickToLoginButton();
 		
-		System.out.println("Register page - Step 03: Verify error message");
-		Assert.assertEquals(registerPage.getErrorMessageAtFirstNameTextbox(), "First name is required.");
-		Assert.assertEquals(registerPage.getErrorMessageAtLastNameTextbox(), "Last name is required.");
-		Assert.assertEquals(registerPage.getErrorMessageAtEmailTextbox(), "Email is required.");
-		Assert.assertEquals(registerPage.getErrorMessageAtPasswordTextbox(), "Password is required.");
-		Assert.assertEquals(registerPage.getErrorMessageAtConfirmPasswordTextbox(), "Password is required.");
+		System.out.println("Login Page - Step 03: Verify error message");
+		Assert.assertEquals(loginPage.getErrorMessageBlankEmail(), "Please enter your email");
 	}
 
-	@Test
-	public void Register_02_Invalid_Email() {
-		System.out.println("Home Page - Step 01: Click to Register link");
-		homePage.clickToRegisterLink();
+	public void Login_02_Invalid_Email() {
+		System.out.println("Home Page - Step 01: Click to Login link");
+		homePage.clickToLoginLink();
 
-		registerPage.inputToFirstNameTextbox(firstName);
-		registerPage.inputToLastNameTextbox(lastName);
-		registerPage.inputToEmailTextbox(emailAddress + "@fdf4#$#%");
-		registerPage.inputToPasswordTextbox(password);
-		registerPage.inputToConfirmPasswordTextbox(password);
+		loginPage.inputToEmailTextbox(invalidEmail);
+		loginPage.inputToPasswordTextbox(password);
 
-		System.out.println("Register page - Step 02: Click to Register button");
-		registerPage.clickToRegisterButton();
+		System.out.println("Login Page - Step 02: Click to Login button");
+		loginPage.clickToLoginButton();
 		
-		System.out.println("Register page - Step 03: Verify error message");
-		Assert.assertEquals(registerPage.getErrorMessageAtEmailTextbox(), "Wrong email");
+		System.out.println("Login page - Step 03: Verify error message");
+		Assert.assertEquals(loginPage.getErrorMessageInvalidEmail(), "Wrong email");
 
 	}
 
 	@Test
-	public void Register_03_Success() {
-		System.out.println("Home Page - Step 01: Click to Register link");
-		homePage.clickToRegisterLink();
+	public void Login_03_Not_Registed_Email() {
+		System.out.println("Home Page - Step 01: Click to Login link");
+		homePage.clickToLoginLink();
 
-		registerPage.inputToFirstNameTextbox(firstName);
-		registerPage.inputToLastNameTextbox(lastName);
-		registerPage.inputToEmailTextbox(emailAddress);
-		registerPage.inputToPasswordTextbox(password);
-		registerPage.inputToConfirmPasswordTextbox(password);
+		loginPage.inputToEmailTextbox(notExistedEmail);
+		loginPage.inputToPasswordTextbox(password);
 
-		System.out.println("Register page - Step 02: Click to Register button");
-		registerPage.clickToRegisterButton();
-
-		System.out.println("Register page - Step 04: Verify success message");
-		Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
-
-		System.out.println("Register page - Step 05: Click button Logout");
-        registerPage.clickToLogoutButton();
+		System.out.println("Login Page - Step 02: Click to Login button");
+		loginPage.clickToLoginButton();
+		
+		System.out.println("Login page - Step 03: Verify error message");
+		Assert.assertEquals(loginPage.getErrorMessageNotExistedEmail(), "Login was unsuccessful. Please correct the errors and try again.\nNo customer account found");
 	}
 
-	@Test
-	public void Register_04_Existing_Email() {
-		System.out.println("Home Page - Step 01: Click to Register link");
-		homePage.clickToRegisterLink();
+	public void Login_04_Blank_Password() {
+		System.out.println("Home Page - Step 01: Click to Login link");
+		homePage.clickToLoginLink();
 
-		registerPage.inputToFirstNameTextbox(firstName);
-		registerPage.inputToLastNameTextbox(lastName);
-		registerPage.inputToEmailTextbox(emailAddress);
-		registerPage.inputToPasswordTextbox(password);
-		registerPage.inputToConfirmPasswordTextbox(password);
+		loginPage.inputToEmailTextbox(email);
 
-		System.out.println("Register page - Step 02: Click to Register button");
-		registerPage.clickToRegisterButton();
-
-		System.out.println("Register page - Step 03: Verify existing error message");
-		Assert.assertEquals(registerPage.getErrorExistingMessage(),
-				"The specified email already exists");
+		System.out.println("Login Page - Step 02: Click to Login button");
+		loginPage.clickToLoginButton();
+		
+		System.out.println("Login page - Step 03: Verify error message");
+		Assert.assertEquals(loginPage.getErrorMessageBlankPassword(), "Login was unsuccessful. Please correct the errors and try again.\nNo customer account found");
+	
 
 	}
 
-	@Test
-	public void Register_05_Password_Less_Than_6_Chars() {
-		System.out.println("Home Page - Step 01: Click to Register link");
-		homePage.clickToRegisterLink();
+	public void Login_05_Wrong_Password() {
+		System.out.println("Home Page - Step 01: Click to Login link");
+		homePage.clickToLoginLink();
 
-		registerPage.inputToFirstNameTextbox(firstName);
-		registerPage.inputToLastNameTextbox(lastName);
-		registerPage.inputToEmailTextbox(emailAddress());
-		registerPage.inputToPasswordTextbox("12345");
-		registerPage.inputToConfirmPasswordTextbox("123456");
+		loginPage.inputToEmailTextbox(email);
+		loginPage.inputToPasswordTextbox(password+ "22233fgfg");
 
-		System.out.println("Register page - Step 02: Click to Register button");
-		registerPage.clickToRegisterButton();
-
-		System.out.println("Register page - Step 03: Verify  error message");
-		Assert.assertEquals(registerPage.getErrorMessageAtPasswordTextbox(),
-				"Password must meet the following rules:\nmust have at least 6 characters");
+		System.out.println("Login Page - Step 02: Click to Login button");
+		loginPage.clickToLoginButton();
+		
+		System.out.println("Login page - Step 03: Verify error message");
+		Assert.assertEquals(loginPage.getErrorMessageWrongPassword(), "Login was unsuccessful. Please correct the errors and try again.\nNo customer account found");
+	
 	}
 
-	@Test
-	public void Registerr_06_Password_And_ConfirmPassword_Is_Differrent() {
-		System.out.println("Home Page - Step 01: Click to Register link");
-		homePage.clickToRegisterLink();
+	public void Login_06_Success_Login() {
+		System.out.println("Home Page - Step 01: Click to Login link");
+		homePage.clickToLoginLink();
 
-		registerPage.inputToFirstNameTextbox("Nguyen");
-		registerPage.inputToLastNameTextbox("Lan");
-		registerPage.inputToEmailTextbox(emailAddress());
-		registerPage.inputToPasswordTextbox(password);
-		registerPage.inputToConfirmPasswordTextbox(password+ "12345678");
+		loginPage.inputToEmailTextbox(email);
+		loginPage.inputToPasswordTextbox(password);
 
-		System.out.println("Register page - Step 02: Click to Register button");
-		registerPage.clickToRegisterButton();
-
-		System.out.println("Register page - Step 03: Verify  error message");
-		Assert.assertEquals(registerPage.getErrorMessageAtConfirmPasswordTextbox(),
-				"The password and confirmation password do not match.");
+		System.out.println("Login Page - Step 02: Click to Login button");
+		loginPage.clickToLoginButton();
+		
+		System.out.println("Login page - Step 03: Verify success move to HomePage");
+		homePage = new HomePageObject(driver);
+		Assert.assertTrue(homePage.isMyAccountLinkIsDisplayed());
 	}
 
-	public String emailAddress() {
+	public String emailLogin() {
 		return "lan" + fakeIntNumber() + "n@gmail.com";
 	}
 
@@ -163,13 +147,4 @@ public class Level_2_Apply_BasePage_2{
 	}
 
 	
-	
-	
-	
-	private WebDriver driver;
-	private String emailAddress;
-	private String firstName, lastName, password;
-	private String project_path = System.getProperty("user.dir");
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
 }
