@@ -17,14 +17,11 @@ public class BaseTest {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}
-		if (browserName.equals("chrome")) {
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-		}
-		if (browserName.equals("edge")) {
-			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
-		}else {
+		/*
+		 * if (browserName.equals("chrome")) { WebDriverManager.chromedriver().setup();
+		 * driver = new ChromeDriver(); } if (browserName.equals("edge")) {
+		 * WebDriverManager.edgedriver().setup(); driver = new EdgeDriver(); }
+		 */else {
 			//throw new RuntimeException("Browser name is invalid!");
 			System.out.println("Invalid");
 		}

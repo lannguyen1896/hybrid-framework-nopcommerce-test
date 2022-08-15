@@ -13,15 +13,17 @@ public class HomePageObject extends BasePage{
 		this.driver = driver;
 	}
 
-	public void clickToRegisterLink() {
+	public RegisterPageObject clickToRegisterLink() {
 		waitForElementClickable(driver, HomePageUI.REGISTER_LINK);
 		clickElement(driver, HomePageUI.REGISTER_LINK);
+		return PageGeneratorManager.getRegisterPageObject(driver);
 		
 	}
 
-	public void clickToLoginLink() {
+	public LoginPageObject clickToLoginLink() {
 		waitForElementClickable(driver, HomePageUI.LOGIN_LINK);
 		clickElement(driver, HomePageUI.LOGIN_LINK);
+		return PageGeneratorManager.getLoginPageObject(driver);
 		
 	}
 
