@@ -2,7 +2,6 @@ package common;
 
 import org.openqa.selenium.WebDriver;
 
-import pageUIs.HomePageUI;
 import pageUIs.RegisterPageUI;
 
 public class RegisterPageObject extends BasePage{
