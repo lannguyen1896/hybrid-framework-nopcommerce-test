@@ -1,32 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [NopCommerce]">
-  <test thread-count="5" name="Run on Chrome(failed)">
-    <parameter name="browser" value="chrome"/>
+  <test thread-count="5" name="Run on Firefox(failed)">
+    <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="com.nopcommerce.user.Level_4_Multiple_Browser">
+      <class name="com.jquery.datatable.Level_10_DataTable_DataGrid">
         <methods>
-          <include name="Login_03_Not_Registed_Email"/>
           <include name="afterClass"/>
-          <include name="Login_02_Invalid_Email"/>
+          <include name="TC_03_Get_Data"/>
           <include name="beforeClass"/>
-          <include name="Login_01_Empty_Data"/>
         </methods>
-      </class> <!-- com.nopcommerce.user.Level_4_Multiple_Browser -->
+      </class> <!-- com.jquery.datatable.Level_10_DataTable_DataGrid -->
     </classes>
-  </test> <!-- Run on Chrome(failed) -->
-  <test thread-count="5" name="Run on Edge(failed)">
-    <parameter name="browser" value="edge"/>
-    <classes>
-      <class name="com.nopcommerce.user.Level_4_Multiple_Browser">
-        <methods>
-          <include name="Login_03_Not_Registed_Email"/>
-          <include name="afterClass"/>
-          <include name="Login_02_Invalid_Email"/>
-          <include name="beforeClass"/>
-          <include name="Login_01_Empty_Data"/>
-        </methods>
-      </class> <!-- com.nopcommerce.user.Level_4_Multiple_Browser -->
-    </classes>
-  </test> <!-- Run on Edge(failed) -->
+  </test> <!-- Run on Firefox(failed) -->
 </suite> <!-- Failed suite [NopCommerce] -->

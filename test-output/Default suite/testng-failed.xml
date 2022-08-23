@@ -3,17 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.nopcommerce.user.Level_2_Apply_BasePage_2">
+      <class name="com.jquery.datatable.Level_10_DataTable_DataGrid">
         <methods>
-          <include name="beforeClass"/>
-          <include name="Login_03_Not_Registed_Email"/>
-          <include name="Login_04_Blank_Password"/>
+          <include name="TC_02_Enter_To_Header_Textbox_By_Label"/>
+          <include name="TC_01_Table_Paging"/>
           <include name="afterClass"/>
-          <include name="Login_02_Invalid_Email"/>
-          <include name="Login_06_Success_Login"/>
-          <include name="Login_05_Wrong_Password"/>
+          <include name="beforeClass"/>
         </methods>
-      </class> <!-- com.nopcommerce.user.Level_2_Apply_BasePage_2 -->
+      </class> <!-- com.jquery.datatable.Level_10_DataTable_DataGrid -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -26,12 +26,16 @@ public class HomePageObject extends BasePage{
 		return PageGeneratorManager.getLoginPageObject(driver);
 		
 	}
+	
+	
 
 	public boolean isMyAccountLinkIsDisplayed() {
-		if(isElementDisplayed(driver, "//a[@class='ico-account']")) {
+		if(isElementDisplayed(driver, "xpath=//a[@class='ico-account']")) {
 			return true;
 		}
 		return false;
 	}
+
+		
 
 }

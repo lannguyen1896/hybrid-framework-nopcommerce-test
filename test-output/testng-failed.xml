@@ -4,29 +4,13 @@
   <test thread-count="5" name="Run on Firefox(failed)">
     <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="com.nopcommerce.user.Level_4_Multiple_Browser">
+      <class name="com.jquery.datatable.Level_10_DataTable_DataGrid">
         <methods>
-          <include name="Login_03_Not_Registed_Email"/>
           <include name="afterClass"/>
-          <include name="Login_02_Invalid_Email"/>
+          <include name="TC_03_Get_Data"/>
           <include name="beforeClass"/>
-          <include name="Login_01_Empty_Data"/>
         </methods>
-      </class> <!-- com.nopcommerce.user.Level_4_Multiple_Browser -->
+      </class> <!-- com.jquery.datatable.Level_10_DataTable_DataGrid -->
     </classes>
   </test> <!-- Run on Firefox(failed) -->
-  <test thread-count="5" name="Run on Chrome(failed)">
-    <parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="com.nopcommerce.user.Level_4_Multiple_Browser">
-        <methods>
-          <include name="Login_03_Not_Registed_Email"/>
-          <include name="afterClass"/>
-          <include name="Login_02_Invalid_Email"/>
-          <include name="beforeClass"/>
-          <include name="Login_01_Empty_Data"/>
-        </methods>
-      </class> <!-- com.nopcommerce.user.Level_4_Multiple_Browser -->
-    </classes>
-  </test> <!-- Run on Chrome(failed) -->
 </suite> <!-- Failed suite [NopCommerce] -->

@@ -29,6 +29,7 @@ public class Level_5_Page_Generator_Manager extends BaseTest {
 
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get("https://demo.nopcommerce.com/");
+		homePage = new HomePageObject(driver);
 
 	}
 
