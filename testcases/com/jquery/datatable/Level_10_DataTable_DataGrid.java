@@ -2,7 +2,6 @@ package com.jquery.datatable;
 
 import org.testng.annotations.Test;
 import common.BaseTest;
-import common.PageGeneratorManager;
 import pageObject.jQuery.HomePageObject;
 import pageObject.jQuery.J_PageGeneratorManager;
 
@@ -22,7 +21,7 @@ public class Level_10_DataTable_DataGrid extends BaseTest {
 		driver = getBrowserDriver(browserName);
 		
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.get("https://www.jqueryscript.net/demo/CRUD-Data-Grid-Plugin-jQuery-Quickgrid/");
+		driver.get("https://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/");
 		
 		homePage = J_PageGeneratorManager.getHomePageObject(driver);
 
@@ -49,11 +48,23 @@ public class Level_10_DataTable_DataGrid extends BaseTest {
 		homePage.sleepInSecond(2);
 	}
 	
-	@Test
+	
 	public void TC_03_Get_Data() {
 		homePage.refreshPage(driver);
 		homePage.getValueEachRowAtAllPage();
 	}
+	
+	@Test
+	public void TC_04_Enter_To_Textbox_At_Any_Row(){
+		homePage.enterToTextboxByColumnNameAtRowNumber("Album", "1", "Michael 97");
+	}
+	
+	
+	
+	
+	
+	
+	
 
 	@AfterClass
 	public void afterClass() {

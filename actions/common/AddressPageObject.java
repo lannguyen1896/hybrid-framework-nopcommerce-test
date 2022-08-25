@@ -1,7 +1,6 @@
 package common;
 
 import org.openqa.selenium.WebDriver;
-import pageUIs.LoginPageUI;
 
 public class AddressPageObject extends BasePage{
 

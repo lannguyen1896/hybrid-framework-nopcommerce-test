@@ -178,12 +178,12 @@ public class BasePage {
 
 	public void selectItemInDefaultDropdown(WebDriver driver, String locatorType, String textItem) {
 		Select select = new Select(getWebElement(driver, locatorType));
-		select.selectByValue(textItem);
+		select.selectByVisibleText(textItem);
 	}
 	
 	public void selectItemInDefaultDropdown(WebDriver driver, String locatorType, String textItem, String...dynamicValue) {
 		Select select = new Select(getWebElement(driver, getDynamicXpath(locatorType, dynamicValue)));
-		select.selectByValue(textItem);
+		select.selectByVisibleText(textItem);
 	}
 
 	public String getSelectedItemDefaultDropdown(WebDriver driver, String locatorType) {
@@ -378,7 +378,7 @@ public class BasePage {
 	}
 	
 	public void waitForElementPresence(WebDriver driver, String locatorType, String...dynamicValue) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, 30);
+		WebDriverWait explicitWait = new WebDriverWait(driver, 10);
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByLocator(getDynamicXpath(locatorType, dynamicValue))));
 	}
 
@@ -388,7 +388,7 @@ public class BasePage {
 	}
 	
 	public void waitForAllElementsPresence(WebDriver driver, String locatorType, String...dynamicValue) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, 30);
+		WebDriverWait explicitWait = new WebDriverWait(driver, 10);
 		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByLocator(getDynamicXpath(locatorType, dynamicValue))));
 	}
 
