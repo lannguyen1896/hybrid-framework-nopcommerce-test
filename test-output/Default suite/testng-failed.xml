@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.jquery.datatable.Level_10_DataTable_DataGrid">
+      <class name="com.nopcommerce.user.Level_17_Assert">
         <methods>
-          <include name="TC_02_Enter_To_Header_Textbox_By_Label"/>
-          <include name="TC_01_Table_Paging"/>
-          <include name="afterClass"/>
           <include name="beforeClass"/>
+          <include name="TC_01_Validate_CurrentURL"/>
+          <include name="afterClass"/>
         </methods>
-      </class> <!-- com.jquery.datatable.Level_10_DataTable_DataGrid -->
+      </class> <!-- com.nopcommerce.user.Level_17_Assert -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -6,8 +6,8 @@
     <classes>
       <class name="com.jquery.datatable.Level_10_DataTable_DataGrid">
         <methods>
+          <include name="TC_04_Enter_To_Textbox_At_Any_Row"/>
           <include name="afterClass"/>
-          <include name="TC_03_Get_Data"/>
           <include name="beforeClass"/>
         </methods>
       </class> <!-- com.jquery.datatable.Level_10_DataTable_DataGrid -->

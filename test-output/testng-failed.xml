@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [NopCommerce]">
-  <test thread-count="5" name="Run on Firefox(failed)">
-    <parameter name="browser" value="firefox"/>
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.jquery.datatable.Level_10_DataTable_DataGrid">
+      <class name="com.nopcommerce.user.Level_17_Assert">
         <methods>
-          <include name="afterClass"/>
-          <include name="TC_03_Get_Data"/>
           <include name="beforeClass"/>
+          <include name="TC_01_Validate_CurrentURL"/>
+          <include name="afterClass"/>
         </methods>
-      </class> <!-- com.jquery.datatable.Level_10_DataTable_DataGrid -->
+      </class> <!-- com.nopcommerce.user.Level_17_Assert -->
     </classes>
-  </test> <!-- Run on Firefox(failed) -->
-</suite> <!-- Failed suite [NopCommerce] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
