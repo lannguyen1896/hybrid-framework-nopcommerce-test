@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [NopCommerce]">
+  <listeners>
+    <listener class-name="common.MethodListener"/>
+    <listener class-name="reportConfig.ReportNGListener"/>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
   <test thread-count="5" name="Run on Firefox(failed)">
     <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="com.jquery.datatable.Level_10_DataTable_DataGrid">
+      <class name="com.nopcommerce.user.Level_18_Apply_ReportNG">
         <methods>
-          <include name="TC_04_Enter_To_Textbox_At_Any_Row"/>
-          <include name="afterClass"/>
           <include name="beforeClass"/>
+          <include name="Login_02_Invalid_Email"/>
+          <include name="Login_05_Wrong_Password"/>
+          <include name="afterClass"/>
         </methods>
-      </class> <!-- com.jquery.datatable.Level_10_DataTable_DataGrid -->
+      </class> <!-- com.nopcommerce.user.Level_18_Apply_ReportNG -->
     </classes>
   </test> <!-- Run on Firefox(failed) -->
 </suite> <!-- Failed suite [NopCommerce] -->

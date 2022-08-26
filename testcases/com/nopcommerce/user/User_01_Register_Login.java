@@ -54,12 +54,6 @@ public class User_01_Register_Login {
 
 	}
 	
-	
-	
-	
-	
-	
-	
 	public void sleepInSecond(long time) {
 		try {
 			Thread.sleep(time*1000);

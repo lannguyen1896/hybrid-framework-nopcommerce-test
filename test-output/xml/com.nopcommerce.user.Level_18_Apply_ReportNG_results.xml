@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Run on Firefox"
+           tests="5"
+           failures="2"
+           errors="0"
+           skipped="0"
+           time="4,534">
+  <properties />
+            <testcase name="Login_05_Wrong_Password" time="0,738" classname="com.nopcommerce.user.Level_18_Apply_ReportNG">
+                <failure type="java.lang.AssertionError"
+                  message="expected [Login was unsuccessful. PleaseEEEE correct the errors and try again.
+No customer account found] but found [Login was unsuccessful. Please correct the errors and try again.
+No customer account found]"
+              >
+<![CDATA[java.lang.AssertionError: expected [Login was unsuccessful. PleaseEEEE correct the errors and try again.
+No customer account found] but found [Login was unsuccessful. Please correct the errors and try again.
+No customer account found]
+  org.testng.Assert.fail(Assert.java:96)
+  org.testng.Assert.failNotEquals(Assert.java:776)
+  org.testng.Assert.assertEqualsImpl(Assert.java:137)
+  org.testng.Assert.assertEquals(Assert.java:118)
+  org.testng.Assert.assertEquals(Assert.java:442)
+  common.BaseTest.verifyEquals(BaseTest.java:77)
+  com.nopcommerce.user.Level_18_Apply_ReportNG.Login_05_Wrong_Password(Level_18_Apply_ReportNG.java:109)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+  java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base/java.lang.reflect.Method.invoke(Method.java:568)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+  org.testng.TestRunner.privateRun(TestRunner.java:648)
+  org.testng.TestRunner.run(TestRunner.java:505)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+  org.testng.SuiteRunner.run(SuiteRunner.java:364)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+  org.testng.TestNG.runSuites(TestNG.java:1049)
+  org.testng.TestNG.run(TestNG.java:1017)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="Login_02_Invalid_Email" time="0,737" classname="com.nopcommerce.user.Level_18_Apply_ReportNG">
+                <failure type="java.lang.AssertionError"
+                  message="expected [Wronggg email] but found [Wrong email]"
+              >
+<![CDATA[java.lang.AssertionError: expected [Wronggg email] but found [Wrong email]
+  org.testng.Assert.fail(Assert.java:96)
+  org.testng.Assert.failNotEquals(Assert.java:776)
+  org.testng.Assert.assertEqualsImpl(Assert.java:137)
+  org.testng.Assert.assertEquals(Assert.java:118)
+  org.testng.Assert.assertEquals(Assert.java:442)
+  common.BaseTest.verifyEquals(BaseTest.java:77)
+  com.nopcommerce.user.Level_18_Apply_ReportNG.Login_02_Invalid_Email(Level_18_Apply_ReportNG.java:61)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+  java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base/java.lang.reflect.Method.invoke(Method.java:568)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+  org.testng.TestRunner.privateRun(TestRunner.java:648)
+  org.testng.TestRunner.run(TestRunner.java:505)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+  org.testng.SuiteRunner.run(SuiteRunner.java:364)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+  org.testng.TestNG.runSuites(TestNG.java:1049)
+  org.testng.TestNG.run(TestNG.java:1017)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+      </failure>
+
+          </testcase>
+  
+  
+            <testcase name="Login_03_Not_Registed_Email" time="0,820" classname="com.nopcommerce.user.Level_18_Apply_ReportNG" />
+                <testcase name="Login_04_Blank_Password" time="0,773" classname="com.nopcommerce.user.Level_18_Apply_ReportNG" />
+                <testcase name="Login_01_Empty_Data" time="1,466" classname="com.nopcommerce.user.Level_18_Apply_ReportNG" />
+      
+</testsuite>

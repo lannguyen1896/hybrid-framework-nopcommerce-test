@@ -6,10 +6,12 @@ import pageObject.jQuery.uploadFiles.HomePageObject;
 import pageObject.jQuery.uploadFiles.U_PageGeneratorManager;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import java.util.concurrent.TimeUnit;
 import org.testng.annotations.AfterClass;
 
+@Listeners(common.MethodListener.class)
 public class Level_11_Upload_Files extends BaseTest {
 
 	HomePageObject homePage;

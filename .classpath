@@ -13,7 +13,6 @@
 	<classpathentry kind="lib" path="libraries/selenium-server-standalone-3.141.59.jar"/>
 	<classpathentry kind="lib" path="libraries/testng-6.14.3.jar"/>
 	<classpathentry kind="lib" path="livDriverManager/commons-codec-1.13.jar"/>
-	<classpathentry kind="lib" path="livDriverManager/commons-collections4-4.3.jar"/>
 	<classpathentry kind="lib" path="livDriverManager/commons-compress-1.20.jar"/>
 	<classpathentry kind="lib" path="livDriverManager/commons-io-2.7.jar"/>
 	<classpathentry kind="lib" path="livDriverManager/gson-2.8.6.jar"/>
@@ -26,5 +25,9 @@
 	<classpathentry kind="lib" path="libLog4J/commons-lang3-3.8.1.jar"/>
 	<classpathentry kind="lib" path="libLog4J/commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="libLog4J/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="libReportNG/guice-3.0.jar"/>
+	<classpathentry kind="lib" path="libReportNG/reportng-1.1.4.jar"/>
+	<classpathentry kind="lib" path="libReportNG/velocity-1.4.jar"/>
+	<classpathentry kind="lib" path="libReportNG/commons-collections-3.2.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

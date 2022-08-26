@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="NopCommerce">
 
-  <test name="Run on Firefox">
-  <parameter name="browser" value="firefox" />
-    <classes>
-      <class name="com.nopcommerce.user.Level_6_Dynamic_Xpath"/>
-    </classes>
-    
-  </test> 
- 
-  
-  
-  
-  
-  
+	<listeners>
+		<listener class-name="common.MethodListener" />
+		<listener class-name="reportConfig.ReportNGListener" />
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+
+	<test name="Run on Firefox">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.nopcommerce.user.Level_18_Apply_ReportNG" />
+		</classes>
+
+	</test>
+
+
 </suite>

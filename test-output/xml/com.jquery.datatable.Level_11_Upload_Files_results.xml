@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Run on Firefox"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="4,107">
+  <properties />
+  
+  
+            <testcase name="TC_01_Upload_1_File_Per_Time" time="2,058" classname="com.jquery.datatable.Level_11_Upload_Files" />
+                <testcase name="TC_02_Upload_Multiple_File_Per_Time" time="2,049" classname="com.jquery.datatable.Level_11_Upload_Files" />
+      
+</testsuite>

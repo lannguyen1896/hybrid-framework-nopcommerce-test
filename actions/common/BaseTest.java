@@ -17,6 +17,10 @@ public class BaseTest {
 	protected WebDriver driver;
 	protected final Log log;
 	
+	public WebDriver getDriverInstance() {
+		return this.driver;
+	}
+	
 	protected BaseTest() {
 		log = LogFactory.getLog(getClass());
 	}
