@@ -328,6 +328,13 @@ public class BasePage {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver, locator));
 	}
+	
+	public String getElementValueByJSXpath(WebDriver driver, String locatorType) {
+		JavascriptExecutor jsExcutor = (JavascriptExecutor)driver;
+		locatorType = locatorType.replace("xpath=", "");
+		
+		return (String) jsExcutor.executeScript("return $(document.evaluate(\""+ locatorType + "\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).val()");
+	}
 
 	public void removeAttributeInDOM(WebDriver driver, String locator, String attributeRemove) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;

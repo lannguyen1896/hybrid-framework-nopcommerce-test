@@ -120,9 +120,9 @@ public class Level_18_Apply_ReportNG extends BaseTest {
 		return rand.nextInt(9999);
 	}
 
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void afterClass() {
-		driver.quit();
+		closeBrowserAndDriver();
 	}
 
 }
